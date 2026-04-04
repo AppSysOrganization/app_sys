@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the Product class.
  *
- * @author Shahd
+ * @author Shahd.
  * @version 1.0
  */
 class ProductTest {
