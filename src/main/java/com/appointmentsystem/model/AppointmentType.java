@@ -3,7 +3,7 @@ package com.appointmentsystem.model;
 /**
  * Represents the different types of appointments available.
  * 
- * @author Elham....
+ * @author Elham.....
  * @version 1.0
  */
 public enum AppointmentType {

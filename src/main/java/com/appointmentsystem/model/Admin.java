@@ -4,7 +4,7 @@ package com.appointmentsystem.model;
  * Represents an Administrator in the system.
  * Administrators manage schedules and approve appointments.
  * 
- * @author Elham....
+ * @author Elham.....
  * @version 1.0
  */
 public class Admin extends User {
