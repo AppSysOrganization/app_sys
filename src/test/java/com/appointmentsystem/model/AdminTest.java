@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Unit tests for the Admin class.
  * Validates the instantiation and basic properties of the Admin model.
  *
- * @author Elham...
+ * @author Elham....
  * @version 1.0
  */
 class AdminTest {
