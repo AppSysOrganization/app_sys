@@ -3,7 +3,7 @@ package com.appointmentsystem.model;
 /**
  * Represents the possible statuses of an appointment.
  * 
- * @author Shahd.
+ * @author Shahd..
  * @version 1.1
  */
 public enum AppointmentStatus {

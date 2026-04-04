@@ -3,7 +3,7 @@ package com.appointmentsystem.model;
 /**
  * Represents a Product offered by a Supplier in the exhibition system.
  * 
- * @author Shahd.
+ * @author Shahd..
  * @version 1.1
  */
 public class Product {
