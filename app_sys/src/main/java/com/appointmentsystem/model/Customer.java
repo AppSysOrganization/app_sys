@@ -3,7 +3,7 @@ package com.appointmentsystem.model;
 /**
  * Represents a Customer who books appointments.
  * 
- * @author Rahaf
+ * @author Rahaf.
  * @version 1.0
  */
 public class Customer extends User {

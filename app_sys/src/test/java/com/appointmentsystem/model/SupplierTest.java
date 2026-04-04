@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the Supplier class.
  *
- * @author Rahaf
+ * @author Rahaf.
  * @version 1.0
  */
 class SupplierTest {

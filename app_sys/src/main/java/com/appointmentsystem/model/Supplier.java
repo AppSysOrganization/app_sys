@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Represents a Supplier who provides appointment slots.
  * 
- * @author Rahaf
+ * @author Rahaf.
  * @version 1.2
  */
 public class Supplier extends User {
