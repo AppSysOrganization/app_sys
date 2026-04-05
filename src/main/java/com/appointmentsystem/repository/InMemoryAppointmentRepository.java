@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * In-memory implementation of the Repository for Appointment entities.
  * 
- * @author Elham
+ * @author Elham.
  * @version 1.0
  */
 public class InMemoryAppointmentRepository implements Repository<Appointment> {

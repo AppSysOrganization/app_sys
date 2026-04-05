@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for EmailService.
  * 
- * @author Elham
+ * @author Elham.
  * @version 1.0
  */
 class EmailServiceTest {
