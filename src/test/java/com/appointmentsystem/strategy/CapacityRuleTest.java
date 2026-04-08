@@ -8,7 +8,7 @@ import com.appointmentsystem.model.Appointment;
  * @author Elham
  * @version 1.0
  */
-public class CapacityRule implements BookingRuleStrategy {
+public class CapacityRuleTest implements BookingRuleStrategy {
 
     /** The maximum number of participants allowed. */
     private int maxParticipants;
@@ -18,7 +18,7 @@ public class CapacityRule implements BookingRuleStrategy {
      *
      * @param maxParticipants the maximum number of participants allowed
      */
-    public CapacityRule(int maxParticipants) {
+    public CapacityRuleTest(int maxParticipants) {
         this.maxParticipants = maxParticipants;
     }
 
