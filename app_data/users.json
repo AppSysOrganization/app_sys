@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  },
+  {
+    "specialization": "AutoMax Cars",
+    "id": 2,
+    "username": "sup1",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  },
+  {
+    "phoneNumber": "0501111111",
+    "id": 3,
+    "username": "u1",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  },
+  {
+    "specialization": "AutoMax Cars",
+    "id": 4,
+    "username": "sup2",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  },
+  {
+    "phoneNumber": "0502222222",
+    "id": 5,
+    "username": "u2",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  },
+  {
+    "specialization": "HomeComfort Furniture",
+    "id": 6,
+    "username": "sup3",
+    "password": "123",
+    "email": "nosodatabase@gmail.com"
+  }
+]

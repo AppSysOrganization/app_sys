@@ -1,0 +1,237 @@
+[
+  {
+    "id": 2306,
+    "startTime": "2026-04-10T10:00:00",
+    "endTime": "2026-04-10T10:25:00",
+    "status": "BOOKED",
+    "type": "URGENT",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 4,
+      "username": "sup2",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0501111111",
+        "id": 3,
+        "username": "u1",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": 4514,
+    "startTime": "2026-04-11T11:00:00",
+    "endTime": "2026-04-11T12:00:00",
+    "status": "PENDING",
+    "type": "ASSESSMENT",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "HomeComfort Furniture",
+      "id": 6,
+      "username": "sup3",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [],
+    "notes": ""
+  },
+  {
+    "id": 4371,
+    "startTime": "2026-04-11T12:00:00",
+    "endTime": "2026-04-11T12:30:00",
+    "status": "APPROVED",
+    "type": "GROUP",
+    "maxParticipants": 3,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 2,
+      "username": "sup1",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [],
+    "notes": ""
+  },
+  {
+    "id": 1331,
+    "startTime": "2026-04-11T10:00:00",
+    "endTime": "2026-04-11T10:25:00",
+    "status": "APPROVED",
+    "type": "INDIVIDUAL",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 4,
+      "username": "sup2",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [],
+    "notes": ""
+  },
+  {
+    "id": 2853,
+    "startTime": "2026-04-09T20:00:11.808",
+    "endTime": "2026-04-09T21:00:11.808",
+    "status": "BOOKED",
+    "type": "IN_PERSON",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 2,
+      "username": "sup1",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0501111111",
+        "id": 3,
+        "username": "u1",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": 4053,
+    "startTime": "2026-04-25T10:00:00",
+    "endTime": "2026-04-25T10:45:00",
+    "status": "BOOKED",
+    "type": "VIRTUAL",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 4,
+      "username": "sup2",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0501111111",
+        "id": 3,
+        "username": "u1",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": 3621,
+    "startTime": "2026-04-11T11:00:00",
+    "endTime": "2026-04-11T12:00:00",
+    "status": "BOOKED",
+    "type": "GROUP",
+    "maxParticipants": 3,
+    "supplier": {
+      "specialization": "HomeComfort Furniture",
+      "id": 6,
+      "username": "sup3",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0501111111",
+        "id": 3,
+        "username": "u1",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": 1479,
+    "startTime": "2026-04-10T09:00:00",
+    "endTime": "2026-04-10T10:00:00",
+    "status": "REJECTED",
+    "type": "FOLLOW_UP",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 2,
+      "username": "sup1",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [],
+    "notes": ""
+  },
+  {
+    "id": 9658,
+    "startTime": "2026-04-11T10:00:00",
+    "endTime": "2026-04-11T10:15:00",
+    "status": "BOOKED",
+    "type": "FOLLOW_UP",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 2,
+      "username": "sup1",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0502222222",
+        "id": 5,
+        "username": "u2",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": 6733,
+    "startTime": "2026-04-10T10:00:00",
+    "endTime": "2026-04-10T10:25:00",
+    "status": "REJECTED",
+    "type": "INDIVIDUAL",
+    "maxParticipants": 2,
+    "supplier": {
+      "specialization": "AutoMax Cars",
+      "id": 4,
+      "username": "sup2",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [],
+    "notes": ""
+  },
+  {
+    "id": 2669,
+    "startTime": "2026-04-11T11:00:00",
+    "endTime": "2026-04-11T12:00:00",
+    "status": "BOOKED",
+    "type": "ASSESSMENT",
+    "maxParticipants": 1,
+    "supplier": {
+      "specialization": "HomeComfort Furniture",
+      "id": 6,
+      "username": "sup3",
+      "password": "123",
+      "email": "nosodatabase@gmail.com"
+    },
+    "customers": [
+      {
+        "phoneNumber": "0502222222",
+        "id": 5,
+        "username": "u2",
+        "password": "123",
+        "email": "nosodatabase@gmail.com"
+      }
+    ],
+    "notes": ""
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 2764,
+    "name": "Toyota Camry 2023",
+    "description": "Reliable family sedan with fuel efficient engine automatic transmission and advanced safety features",
+    "price": 28000.0,
+    "category": "Sedan Cars",
+    "supplierId": 2
+  },
+  {
+    "id": 6415,
+    "name": "Honda Civic 2024",
+    "description": "Sporty compact sedan with turbocharged engine touchscreen display and excellent fuel economy",
+    "price": 24000.0,
+    "category": "Sedan Cars",
+    "supplierId": 2
+  },
+  {
+    "id": 9953,
+    "name": "Toyota RAV4 2023",
+    "description": "Popular SUV with spacious interior all wheel drive hybrid option and modern technology package",
+    "price": 35000.0,
+    "category": "SUV Cars",
+    "supplierId": 2
+  },
+  {
+    "id": 8581,
+    "name": "Ford Explorer 2023",
+    "description": "Large SUV with powerful V6 engine three row seating four wheel drive and towing capability",
+    "price": 42000.0,
+    "category": "SUV Cars",
+    "supplierId": 2
+  },
+  {
+    "id": 1837,
+    "name": "Sedan Cars",
+    "description": "Affordable reliable sedan with smooth ride low maintenance cost and comfortable interior",
+    "price": 22000.0,
+    "category": "Sedan Cars",
+    "supplierId": 2
+  },
+  {
+    "id": 3890,
+    "name": "BMW X5 2023",
+    "description": "Premium luxury SUV with powerful engine leather seats panoramic roof and advanced driver assistance",
+    "price": 65000.0,
+    "category": "Luxury SUV",
+    "supplierId": 4
+  },
+  {
+    "id": 9336,
+    "name": "Mercedes C200 2024",
+    "description": "Elegant luxury sedan with turbocharged engine premium interior ambient lighting and safety systems",
+    "price": 55000.0,
+    "category": "Luxury Sedan",
+    "supplierId": 4
+  },
+  {
+    "id": 7259,
+    "name": "Hyundai Tucson 2024",
+    "description": "Modern SUV with stylish design digital cockpit wireless charging and fuel efficient engine",
+    "price": 30000.0,
+    "category": "SUV Cars",
+    "supplierId": 4
+  },
+  {
+    "id": 5930,
+    "name": "Kia Sportage 2024",
+    "description": "Versatile SUV with bold exterior spacious cargo area advanced infotainment and hybrid option",
+    "price": 27000.0,
+    "category": "SUV Cars",
+    "supplierId": 4
+  },
+  {
+    "id": 4334,
+    "name": "Nissan Patrol 2023",
+    "description": "Full size luxury SUV with V8 engine off road capability premium leather seats and entertainment system",
+    "price": 72000.0,
+    "category": "Luxury SUV",
+    "supplierId": 4
+  },
+  {
+    "id": 6304,
+    "name": "Royal Sofa Set",
+    "description": "Elegant three piece sofa set with premium velvet fabric wooden frame comfortable cushions and modern design",
+    "price": 1200.0,
+    "category": "Living Room",
+    "supplierId": 6
+  },
+  {
+    "id": 7950,
+    "name": "King Bedroom Set",
+    "description": "Complete bedroom set includes king bed wardrobe dresser and nightstands with walnut wood finish",
+    "price": 2500.0,
+    "category": "Bedroom",
+    "supplierId": 6
+  },
+  {
+    "id": 2227,
+    "name": "Dining Table 8 Seats",
+    "description": "Solid wood dining table with eight chairs elegant design suitable for large families and gatherings",
+    "price": 900.0,
+    "category": "Dining Room",
+    "supplierId": 6
+  },
+  {
+    "id": 1291,
+    "name": "Office Desk Executive",
+    "description": "Spacious executive office desk with drawers cable management system and durable wooden surface",
+    "price": 450.0,
+    "category": "Office",
+    "supplierId": 6
+  },
+  {
+    "id": 8478,
+    "name": "Luxury Mattress",
+    "description": "Orthopedic memory foam mattress with cooling gel layer medium firm support and hypoallergenic cover",
+    "price": 800.0,
+    "category": "Bedroom",
+    "supplierId": 6
+  }
+]
