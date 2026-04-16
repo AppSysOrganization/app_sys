@@ -16,10 +16,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.jupiter.version>5.9.3</junit.jupiter.version>
     <mockito.version>5.5.0</mockito.version>
+
+    <!-- SonarCloud -->
+    <sonar.organization>appsysorganization</sonar.organization>
+    <sonar.projectKey>AppSysOrganization_app_sys</sonar.projectKey>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
-
     <!-- JUnit 5 -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -42,15 +46,15 @@
       <artifactId>gson</artifactId>
       <version>2.10.1</version>
     </dependency>
-    
-     <!-- Jakarta Mail for sending real emails -->
+
+    <!-- Jakarta Mail -->
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>jakarta.mail</artifactId>
       <version>2.0.1</version>
     </dependency>
-    
-    <!-- Dotenv to read credentials securely from .env file -->
+
+    <!-- Dotenv -->
     <dependency>
       <groupId>io.github.cdimascio</groupId>
       <artifactId>dotenv-java</artifactId>
@@ -60,21 +64,18 @@
 
   <build>
     <plugins>
-
       <!-- JaCoCo -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.10</version>
         <executions>
-
           <execution>
             <id>prepare-agent</id>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
           </execution>
-
           <execution>
             <id>report</id>
             <phase>test</phase>
@@ -88,7 +89,6 @@
               </excludes>
             </configuration>
           </execution>
-
         </executions>
       </plugin>
 
@@ -99,12 +99,11 @@
         <version>3.1.2</version>
         <configuration>
           <useModulePath>false</useModulePath>
-                    <excludes>
-      <exclude>**/persistence/**</exclude>
-    </excludes>
+          <excludes>
+            <exclude>**/persistence/**</exclude>
+          </excludes>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 
