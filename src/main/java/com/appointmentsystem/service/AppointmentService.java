@@ -313,13 +313,12 @@ public class AppointmentService {
         List<Appointment> allAppts = appointmentRepo.findAll();
 
         for (Appointment appt : allAppts) {
-            if (appt.getStatus() == AppointmentStatus.BOOKED || appt.getStatus() == AppointmentStatus.APPROVED) {
-                if (appt.getStartTime().isAfter(now) && appt.getStartTime().isBefore(reminderThreshold)) {
-                    for (Customer c : appt.getCustomers()) {
-                        String reminderMessage = c.getEmail() + " Reminder: You have an appointment tomorrow at "
-                                + appt.getStartTime().toLocalTime() + " with " + appt.getSupplier().getUsername() + ".";
-                        notificationManager.notifyObservers(reminderMessage);
-                    }
+            if ((appt.getStatus() == AppointmentStatus.BOOKED || appt.getStatus() == AppointmentStatus.APPROVED)
+                    && appt.getStartTime().isAfter(now) && appt.getStartTime().isBefore(reminderThreshold)) {
+                for (Customer c : appt.getCustomers()) {
+                    String reminderMessage = c.getEmail() + " Reminder: You have an appointment tomorrow at "
+                            + appt.getStartTime().toLocalTime() + " with " + appt.getSupplier().getUsername() + ".";
+                    notificationManager.notifyObservers(reminderMessage);
                 }
             }
         }
