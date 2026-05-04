@@ -27,6 +27,9 @@ public class AppointmentService {
     /** The list of booking validation rules. */
     private List<BookingRuleStrategy> validationRules;
 
+    /** Constant for appointment not found message. */
+    private static final String APPOINTMENT_NOT_FOUND = "Appointment not found.";
+
     /**
      * Constructs an AppointmentService with the required dependencies.
      *
@@ -119,7 +122,7 @@ public class AppointmentService {
     public String cancelAppointmentBySupplier(int appointmentId, Supplier supplier) {
         Appointment appt = appointmentRepo.findById(appointmentId).orElse(null);
 
-        if (appt == null) return "Appointment not found.";
+        if (appt == null) return APPOINTMENT_NOT_FOUND;
         if (appt.getSupplier().getId() != supplier.getId()) return "Unauthorized action.";
 
         if (appt.getStatus() == AppointmentStatus.PENDING) {
@@ -151,7 +154,7 @@ public class AppointmentService {
     public String bookAppointment(int appointmentId, Customer customer) {
         Appointment appt = appointmentRepo.findById(appointmentId).orElse(null);
 
-        if (appt == null) return "Appointment not found.";
+        if (appt == null) return APPOINTMENT_NOT_FOUND;
         if (appt.getStatus() != AppointmentStatus.APPROVED && appt.getStatus() != AppointmentStatus.BOOKED) {
             return "Appointment is not available.";
         }
@@ -203,7 +206,7 @@ public class AppointmentService {
     public String cancelAppointment(int appointmentId, User user) {
         Appointment appt = appointmentRepo.findById(appointmentId).orElse(null);
 
-        if (appt == null) return "Appointment not found.";
+        if (appt == null) return APPOINTMENT_NOT_FOUND;
         if (appt.getStartTime().isBefore(LocalDateTime.now())) {
             return "Cannot cancel past appointments.";
         }
@@ -276,7 +279,7 @@ public class AppointmentService {
                                               AppointmentType newType, int newCapacity) {
         Appointment appt = appointmentRepo.findById(appointmentId).orElse(null);
 
-        if (appt == null) return "Appointment not found.";
+        if (appt == null) return APPOINTMENT_NOT_FOUND;
         if (appt.getSupplier().getId() != supplier.getId()) return "Unauthorized action.";
 
         if (appt.getStatus() == AppointmentStatus.BOOKED || appt.getStatus() == AppointmentStatus.COMPLETED) {
