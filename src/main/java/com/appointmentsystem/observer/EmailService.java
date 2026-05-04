@@ -5,6 +5,7 @@ import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -36,9 +37,10 @@ public class EmailService implements Observer {
             this.senderEmail = dotenv.get("EMAIL_ADDRESS");
             this.senderPassword = dotenv.get("EMAIL_PASSWORD");
 
-            logger.info("EmailService initialized. Sender: " + (senderEmail != null ? "Loaded" : "NULL"));
+            logger.log(Level.INFO, "EmailService initialized. Sender: {0}",
+                    (senderEmail != null ? "Loaded" : "NULL"));
         } catch (Exception e) {
-            logger.severe("Error loading .env file: " + e.getMessage());
+            logger.log(Level.SEVERE, "Error loading .env file: {0}", e.getMessage());
         }
     }
 
@@ -57,7 +59,7 @@ public class EmailService implements Observer {
 
             sendEmail(toEmail, "Appointment System Notification", body);
         } else {
-            logger.info("Email credentials not configured or message empty.");
+            logger.log(Level.INFO, "Email credentials not configured or message empty.");
         }
     }
 
@@ -84,7 +86,7 @@ public class EmailService implements Observer {
         });
 
         if (session == null) {
-            logger.severe("Failed to create email session.");
+            logger.log(Level.SEVERE, "Failed to create email session.");
             return;
         }
 
@@ -96,9 +98,9 @@ public class EmailService implements Observer {
             message.setText(body);
 
             Transport.send(message);
-            logger.info("Real Email sent successfully to " + toEmail);
+            logger.log(Level.INFO, "Real Email sent successfully to {0}", toEmail);
         } catch (MessagingException e) {
-            logger.severe("Failed to send real email: " + e.getMessage());
+            logger.log(Level.SEVERE, "Failed to send real email: {0}", e.getMessage());
         }
     }
 }
