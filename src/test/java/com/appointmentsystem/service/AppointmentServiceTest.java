@@ -541,4 +541,67 @@ class AppointmentServiceTest {
 
         verify(mockNotifier, never()).notifyObservers(anyString());
     }
+
+    /**
+     * Tests that bookAppointment returns error when appointment not found.
+     */
+    @Test
+    void testBookAppointmentNotFound() {
+        when(mockRepo.findById(99)).thenReturn(Optional.empty());
+        String result = service.bookAppointment(99, customer);
+        assertEquals("Appointment not found.", result);
+    }
+
+    /**
+     * Tests sendReminders with APPROVED status appointment within 24 hours.
+     */
+    @Test
+    void testSendRemindersForApprovedAppointment() {
+        Appointment appt = new Appointment(100, LocalDateTime.now().plusHours(12),
+                LocalDateTime.now().plusHours(13), AppointmentType.IN_PERSON, 1, supplier);
+        appt.setStatus(AppointmentStatus.APPROVED);
+        appt.addCustomer(customer);
+
+        when(mockRepo.findAll()).thenReturn(Arrays.asList(appt));
+
+        service.sendRemindersForUpcomingAppointments();
+
+        verify(mockNotifier, times(1)).notifyObservers(anyString());
+    }
+
+    /**
+     * Tests that modifyAppointmentBySupplier returns error when appointment not found.
+     */
+    @Test
+    void testModifyAppointmentNotFound() {
+        when(mockRepo.findById(99)).thenReturn(Optional.empty());
+
+        String result = service.modifyAppointmentBySupplier(99, supplier,
+                LocalDateTime.now().plusDays(1),
+                LocalDateTime.now().plusDays(1).plusHours(1),
+                AppointmentType.IN_PERSON, 1);
+
+        assertEquals("Appointment not found.", result);
+    }
+
+    /**
+     * Tests that modifyAppointmentBySupplier returns error when supplier unauthorized.
+     */
+    @Test
+    void testModifyAppointmentUnauthorizedSupplier() {
+        Supplier otherSupplier = new Supplier(99, "Other", "p", "o@m.com", "Gen");
+        Appointment appt = new Appointment(50, LocalDateTime.now().plusDays(1),
+                LocalDateTime.now().plusDays(1).plusHours(1),
+                AppointmentType.IN_PERSON, 1, supplier);
+        appt.setStatus(AppointmentStatus.PENDING);
+
+        when(mockRepo.findById(50)).thenReturn(Optional.of(appt));
+
+        String result = service.modifyAppointmentBySupplier(50, otherSupplier,
+                LocalDateTime.now().plusDays(1),
+                LocalDateTime.now().plusDays(1).plusHours(1),
+                AppointmentType.IN_PERSON, 1);
+
+        assertEquals("Unauthorized action.", result);
+    }
 }
