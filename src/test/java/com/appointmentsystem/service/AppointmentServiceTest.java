@@ -604,4 +604,50 @@ class AppointmentServiceTest {
 
         assertEquals("Unauthorized action.", result);
     }
+    
+    /**
+     * Tests that approveAppointment returns false when appointment not found.
+     */
+    @Test
+    void testApproveAppointmentNotFound() {
+        when(mockRepo.findById(99)).thenReturn(Optional.empty());
+        boolean result = service.approveAppointment(99, admin);
+        assertFalse(result);
+    }
+
+    /**
+     * Tests that rejectAppointment returns false when appointment not found.
+     */
+    @Test
+    void testRejectAppointmentNotFound() {
+        when(mockRepo.findById(99)).thenReturn(Optional.empty());
+        boolean result = service.rejectAppointment(99);
+        assertFalse(result);
+    }
+
+    /**
+     * Tests that cancelAppointmentBySupplier returns error when appointment not found.
+     */
+    @Test
+    void testCancelBySupplierNotFound() {
+        when(mockRepo.findById(99)).thenReturn(Optional.empty());
+        String result = service.cancelAppointmentBySupplier(99, supplier);
+        assertEquals("Appointment not found.", result);
+    }
+
+    /**
+     * Tests cancelAppointmentBySupplier returns error for invalid status.
+     */
+    @Test
+    void testCancelBySupplierInvalidStatus() {
+        Appointment appt = new Appointment(55, LocalDateTime.now().plusDays(1),
+                LocalDateTime.now().plusDays(1).plusHours(1),
+                AppointmentType.IN_PERSON, 1, supplier);
+        appt.setStatus(AppointmentStatus.COMPLETED);
+
+        when(mockRepo.findById(55)).thenReturn(Optional.of(appt));
+
+        String result = service.cancelAppointmentBySupplier(55, supplier);
+        assertEquals("Cannot cancel appointment in its current state.", result);
+    }
 }
