@@ -28,15 +28,7 @@ class EmailServiceTest {
      */
     @Test
     void testEmailServiceConstructor() {
-        assertDoesNotThrow(EmailService::new);
-    }
-
-    /**
-     * Tests that update method executes without throwing exceptions.
-     */
-    @Test
-    void testUpdateDoesNotThrow() {
-        assertDoesNotThrow(() -> service.update("Test Message"));
+        assertDoesNotThrow(() -> new EmailService());
     }
 
     /**
@@ -69,5 +61,13 @@ class EmailServiceTest {
     @Test
     void testUpdateWithSinglePartMessage() {
         assertDoesNotThrow(() -> service.update("onlyOneWord"));
+    }
+
+    /**
+     * Tests that update sends email with valid email and body.
+     */
+    @Test
+    void testUpdateWithValidEmail() {
+        assertDoesNotThrow(() -> service.update("s12324983@stu.najah.edu Appointment System Test Notification"));
     }
 }
