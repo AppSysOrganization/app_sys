@@ -5,16 +5,20 @@ import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 /**
  * Represents an Email Notification Service.
  * Implements the Observer interface to receive notifications.
  * Sends real emails using SMTP and secure credentials via .env file.
- * 
+ *
  * @author Elham
  * @version 1.1
  */
 public class EmailService implements Observer {
+
+    /** Logger for this class. */
+    private static final Logger logger = Logger.getLogger(EmailService.class.getName());
 
     /** The sender's email address loaded from .env. */
     private String senderEmail;
@@ -31,10 +35,10 @@ public class EmailService implements Observer {
             Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
             this.senderEmail = dotenv.get("EMAIL_ADDRESS");
             this.senderPassword = dotenv.get("EMAIL_PASSWORD");
-            
-            System.out.println("EmailService initialized. Sender: " + (senderEmail != null ? "Loaded" : "NULL"));
+
+            logger.info("EmailService initialized. Sender: " + (senderEmail != null ? "Loaded" : "NULL"));
         } catch (Exception e) {
-            System.err.println("Error loading .env file: " + e.getMessage());
+            logger.severe("Error loading .env file: " + e.getMessage());
         }
     }
 
@@ -50,10 +54,10 @@ public class EmailService implements Observer {
             String[] parts = message.split(" ", 2);
             String toEmail = parts[0];
             String body = (parts.length > 1) ? parts[1] : message;
-            
+
             sendEmail(toEmail, "Appointment System Notification", body);
         } else {
-            System.out.println("Email credentials not configured or message empty.");
+            logger.info("Email credentials not configured or message empty.");
         }
     }
 
@@ -66,11 +70,11 @@ public class EmailService implements Observer {
      */
     private void sendEmail(String toEmail, String subject, String body) {
         Properties props = new Properties();
-        props.put("mail.transport.protocol", "smtp"); 
+        props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", true); 
+        props.put("mail.smtp.starttls.enable", true);
 
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
@@ -80,7 +84,7 @@ public class EmailService implements Observer {
         });
 
         if (session == null) {
-            System.err.println("Failed to create email session.");
+            logger.severe("Failed to create email session.");
             return;
         }
 
@@ -89,12 +93,12 @@ public class EmailService implements Observer {
             message.setFrom(new InternetAddress(senderEmail));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
             message.setSubject(subject);
-            message.setText(body); 
+            message.setText(body);
 
             Transport.send(message);
-            System.out.println("Real Email sent successfully to " + toEmail);
+            logger.info("Real Email sent successfully to " + toEmail);
         } catch (MessagingException e) {
-            System.err.println("Failed to send real email: " + e.getMessage());
+            logger.severe("Failed to send real email: " + e.getMessage());
         }
     }
 }
