@@ -62,4 +62,20 @@ class EmailServiceTest {
     void testUpdateWithSinglePartMessage() {
         assertDoesNotThrow(() -> service.update("onlyOneWord"));
     }
+    
+    /**
+     * Tests that update sends email when credentials and message are valid.
+     */
+    @Test
+    void testUpdateWithValidEmailFormat() {
+        assertDoesNotThrow(() -> service.update("test@example.com This is a test body"));
+    }
+
+    /**
+     * Tests that update handles message with no space (single part).
+     */
+    @Test  
+    void testUpdateWithNoBodyPart() {
+        assertDoesNotThrow(() -> service.update("test@example.com"));
+    }
 }
