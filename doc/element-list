@@ -1,0 +1,8 @@
+com.appointmentsystem.ai
+com.appointmentsystem.model
+com.appointmentsystem.observer
+com.appointmentsystem.persistence
+com.appointmentsystem.repository
+com.appointmentsystem.service
+com.appointmentsystem.strategy
+com.appointmentsystem.ui
