@@ -1,5 +1,4 @@
 package com.appointmentsystem.model;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the User class.
  * Tests constructor and getter/setter functionality.
- * 
+ *
  * @author Shahd
  * @version 1.0
  */
@@ -22,7 +21,7 @@ class UserTest {
     /**
      * Helper class to create a concrete User instance for testing
      * since User is abstract.
-     * 
+     *
      * @author Shahd
      * @version 1.0
      */
@@ -38,6 +37,13 @@ class UserTest {
          */
         public TestUser(int id, String username, String password, String email) {
             super(id, username, password, email);
+        }
+
+        /**
+         * Constructs a new TestUser with default values.
+         */
+        public TestUser() {
+            super();
         }
     }
 
@@ -82,6 +88,27 @@ class UserTest {
         assertEquals("testuser", testUser.getUsername(), "Username mismatch");
         assertEquals("password123", testUser.getPassword(), "Password mismatch");
         assertEquals("test@example.com", testUser.getEmail(), "Email mismatch");
+    }
+
+    /**
+     * Tests the default constructor creates a user with null/default values.
+     */
+    @Test
+    void testDefaultConstructor() {
+        User defaultUser = new TestUser();
+        assertEquals(0, defaultUser.getId(), "Default ID should be 0");
+        assertNull(defaultUser.getUsername(), "Default username should be null");
+        assertNull(defaultUser.getPassword(), "Default password should be null");
+        assertNull(defaultUser.getEmail(), "Default email should be null");
+    }
+
+    /**
+     * Tests setting the user ID.
+     */
+    @Test
+    void testSetId() {
+        testUser.setId(99);
+        assertEquals(99, testUser.getId(), "ID not updated correctly");
     }
 
     /**
