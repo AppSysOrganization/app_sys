@@ -28,7 +28,7 @@ class EmailServiceTest {
      */
     @Test
     void testEmailServiceConstructor() {
-        assertDoesNotThrow(() -> new EmailService());
+    	assertDoesNotThrow(EmailService::new);
     }
 
     /**

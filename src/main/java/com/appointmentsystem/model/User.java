@@ -29,7 +29,7 @@ public abstract class User {
      * @param password the password for login
      * @param email    the email address of the user
      */
-    public User(int id, String username, String password, String email) {
+    protected User(int id, String username, String password, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -39,7 +39,7 @@ public abstract class User {
     /**
      * Constructs a new User with default values.
      */
-    public User() {
+    protected User() {
     }
 
     /**
